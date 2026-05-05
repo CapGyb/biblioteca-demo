@@ -13,9 +13,9 @@ public class BibliotecaService {
     }
 
     public void devolverLivro(Livro livro) {
-    /*     if (!livro.isEmprestado()) {
+        if (!livro.isEmprestado()) {
             throw new RuntimeException("Livro não está emprestado!");
-        }*/
+        }
 
         livro.setEmprestado(false);
     }
