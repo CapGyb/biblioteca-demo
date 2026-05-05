@@ -1,0 +1,22 @@
+name: Build e Testes
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Rodar testes
+        run: mvn clean test
+
+      - name: Gerar relatório JaCoCo
+        run: mvn jacoco:report
