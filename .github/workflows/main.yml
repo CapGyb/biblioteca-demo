@@ -1,22 +1,33 @@
-name: Build e Testes
+name: Build e Testes com JaCoCo
 
-on: [push]
+on:
+  push:
+    branches: [ "main" ] # É boa prática especificar a branch principal
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
       - name: Configurar Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+          cache: 'maven' # Adicionado o cache para deixar o build mais rápido nas próximas vezes
 
-      - name: Rodar testes
-        run: mvn clean test
+      - name: Rodar testes e gerar relatório JaCoCo
+        # Você pode rodar tudo em uma única linha para simplificar
+        run: mvn clean test jacoco:report
 
-      - name: Gerar relatório JaCoCo
-        run: mvn jacoco:report
+      - name: Disponibilizar Relatório JaCoCo para Download
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-cobertura-jacoco
+          # Este é o caminho padrão onde o JaCoCo gera os arquivos HTML
+          path: target/site/jacoco/

@@ -13,7 +13,10 @@ public class BibliotecaService {
     }
 
     public void devolverLivro(Livro livro) {
-        // BUG proposital: deveria validar se NÃO está emprestado
+    /*     if (!livro.isEmprestado()) {
+            throw new RuntimeException("Livro não está emprestado!");
+        }*/
+
         livro.setEmprestado(false);
     }
 }
