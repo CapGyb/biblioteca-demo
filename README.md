@@ -22,7 +22,7 @@ Certifique-se de ter o **Java (JDK)** e o **Maven** instalados e configurados na
 
 ### Clonando o repositório
 ```bash
-git clone [https://github.com/CapGyb/biblioteca-demo.git](https://github.com/CapGyb/biblioteca-demo.git)
+git clone https://github.com/CapGyb/biblioteca-demo.git
 cd biblioteca-demo
 ```
 ### Rodando os Testes
