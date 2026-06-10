@@ -1,6 +1,7 @@
 # biblioteca-demo
 
-[![Pipeline Status](https://github.com/CapGyb/biblioteca-demo/actions/workflows/maven.yml/badge.svg)](https://github.com/SEU_USUARIO/biblioteca-demo/actions)
+![Build Status](https://github.com/CapGyb/biblioteca-demo/actions/workflows/maven.yml/badge.svg)
+
 
 Este repositório contém uma demonstração técnica de um sistema de gerenciamento de biblioteca. O foco principal do projeto é a validação das regras de negócio referente à **devolução de livros**, garantindo a qualidade do software através de testes automatizados e análise de cobertura de código.
 
